@@ -20,7 +20,7 @@ function App() {
 
 useEffect(()=>{
     async function fetchPeople(){
-      const url = baseURL + page
+      const url = baseURL
     console.log(url);
       let res = await fetch(url);
       let data = await res.json();

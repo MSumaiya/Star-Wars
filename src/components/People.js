@@ -1,8 +1,9 @@
+// eslint-disable-next-line 
 import React from 'react';
-import { Card, Grid, GridColumn } from 'semantic-ui-react';
+import { Card, Grid} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 
-export default function({data}){
+export default function People({data}){
     return(
         <>
         <h1>People</h1>
