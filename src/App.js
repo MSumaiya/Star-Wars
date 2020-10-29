@@ -2,16 +2,15 @@ import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar.js'
 import Home from './components/Home'
 import People from './components/People';
-import Pagination from './components/Pagination';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Dimmer, Loader } from 'semantic-ui-react';  
 
 
 function App() {
   const baseURL = 'https://swapi.dev/api/people/?page=';
-  const pageNo = document.getElementById('pageNumber')
-  const prevPage= document.getElementById('prev');
-  const nextPage= document.getElementById('next');
+  //const pageNo = document.getElementById('pageNumber')
+  //const prevPage= document.getElementById('prev');
+ // const nextPage= document.getElementById('next');
   const [page, setPage] = useState(1);
   const [people, setPeople]=useState([]);
   //const [planet, setPlanet]=useState([]);

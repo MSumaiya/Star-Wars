@@ -1,4 +1,4 @@
-
+/* 
 import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar.js'
 import Home from './components/Home'
@@ -58,4 +58,4 @@ useEffect(()=>{
   );
 }
 
-export default App;
+export default App; */
