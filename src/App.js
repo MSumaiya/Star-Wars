@@ -8,19 +8,13 @@ import { Container, Dimmer, Loader } from 'semantic-ui-react';
 
 function App() {
   const baseURL = 'https://swapi.dev/api/people/?page=';
-  //const pageNo = document.getElementById('pageNumber')
-  //const prevPage= document.getElementById('prev');
- // const nextPage= document.getElementById('next');
   const [page, setPage] = useState(1);
   const [people, setPeople]=useState([]);
-  //const [planet, setPlanet]=useState([]);
   const [loading, setLoading]=useState(true);
-  /* const [currentPage, setCurrentPage]= useState(1);
-  const [postsPerPage, setPostsPerPage]= useState(10) */
-
+  
 useEffect(()=>{
     async function fetchPeople(){
-      const url = baseURL
+      const url = baseURL;
     console.log(url);
       let res = await fetch(url);
       let data = await res.json();
@@ -42,7 +36,7 @@ useEffect(()=>{
       setLoading(false);
     }
     fetchPeople();
-    //fetchPeople();
+    
   }
 
   function goPrev(){
@@ -59,33 +53,6 @@ useEffect(()=>{
     fetchPeople();
   }
 
-  /* prevPage.addEventListener("click", ()=>{
-    page--
-    fetchPeople();
-  })
-
-  nextPage.addEventListener("click", ()=>{
-    page++
-    fetchPeople();
-  }) */
-  //pagination
- /*  if(page===1){
-    prevPage.disabled = true;
-  }else{
-    prevPage.disabled = false;
-  }
-  if(people.length < 10){
-    nextPage.disabled = true;
-  }else {
-    nextPage.disabled = false;
-  } */
-
-  /* const indexOfLastPost = currentPage*postsPerPage;
-  const indexOfFirstPost= indexOfLastPost-postsPerPage;
-  const currentPosts = people.slice(indexOfFirstPost, indexOfLastPost);
-  console.log(people.length);
-
-  const paginate=(pageNumber)=> setCurrentPage(pageNumber) */
   return (
     <div className="App">
   <Router>

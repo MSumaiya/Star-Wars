@@ -1,7 +1,7 @@
 // eslint-disable-next-line 
 import React from 'react';
 import { Card, Grid} from 'semantic-ui-react';
-import {Link} from 'react-router-dom';
+import './People.css'
 
 export default function People({data}){
     return(
@@ -11,23 +11,21 @@ export default function People({data}){
             {data.map((people, i)=>{
                 return(
                     <Grid.Column key={i}>
-                        <Card>
+                        <Card className="cardHeight">
                             <Card.Content>
-                                <Link to='/'>
                                     <Card.Header>{people.name}</Card.Header>
-                                </Link>
+                                
                                     <Card.Description>
-                                        <strong>Height</strong>
-                                        <p>{people.height}</p>
-                                        <strong>Mass</strong>
-                                        <p>{people.mass}</p>
-                                        <strong>Hair Color</strong>
-                                        <p>{people.hair}</p>
+                                        <div className='description'>
+                                            <div className='moreInfo'>Height:{people.height}</div>
+                                            <div className='moreInfo'>Mass:{people.mass}</div>
+                                            <div className='moreInfo'>Gender: {people.gender}</div>
+                                            <div className='moreInfo'>Skin Color: {people.skin_color}</div>            
+                                        </div>
                                     </Card.Description>
                             </Card.Content>
                         </Card>
-                    </Grid.Column>
-                    
+                    </Grid.Column>  
                 )
             })}
         </Grid>
