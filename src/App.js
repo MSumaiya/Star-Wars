@@ -52,7 +52,16 @@ useEffect(()=>{
     }
     fetchPeople();
   }
-
+  //Styling for button
+const myStyle={
+  height:'30px',
+  width:'70px',
+  padding:'3px',
+  textAlign:'center',
+  lineHeight:'10px',
+  borderRadius:'10px',
+  margin:'10px'
+}
   return (
     <div className="App">
   <Router>
@@ -70,8 +79,8 @@ useEffect(()=>{
           <Route exact path='/people'>
             <People data={people}/>
             <p id="pageNumber"></p>
-            <button type="button" id="prev" onClick={goPrev}>Prev</button>
-            <button type="button" id="next" onClick={goNext}>Next</button>
+            <button type="button" id="prev" onClick={goPrev} style={myStyle}>Prev</button>
+            <button type="button" id="next" onClick={goNext} style={myStyle}>Next</button>
           </Route>
             </Switch>
             )}
