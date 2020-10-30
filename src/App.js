@@ -14,7 +14,7 @@ function App() {
   
 useEffect(()=>{
     async function fetchPeople(){
-      const url = baseURL;
+      const url = baseURL+page;
     console.log(url);
       let res = await fetch(url);
       let data = await res.json();
@@ -22,35 +22,16 @@ useEffect(()=>{
       setLoading(false);
     }
     fetchPeople();
-  },[]);
+  },[page]);
 
   function goNext(){
-    
-    setPage(page+1);
-    console.log(page);
-    async function fetchPeople(){
-      const url = baseURL + page
-      let res = await fetch(url);
-      let data = await res.json();
-      setPeople(data.results);
-      setLoading(false);
-    }
-    fetchPeople();
-    
+    if(page < 9) {   
+    setPage(page+1);}
   }
 
   function goPrev(){
-    
-    setPage(page-1);
-    console.log(page);
-      async function fetchPeople(){
-      const url = baseURL + page
-      let res = await fetch(url);
-      let data = await res.json();
-      setPeople(data.results);
-      setLoading(false);
-    }
-    fetchPeople();
+    if(page >= 2){
+    setPage(page-1);}
   }
   //Styling for button
 const myStyle={
